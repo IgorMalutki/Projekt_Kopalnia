@@ -62,16 +62,18 @@ nazwisko = 'Zadlo'
 rok_urodzenia = '1974-07-03'
 stanowisko = 'kierownik'
 płaca = 10000.00
-print(imie, nazwisko,rok_urodzenia, stanowisko, płaca, round(płaca,2),round(płaca*1.23,2))# zaokragla matematycznie
-print('%s %s %s %s %7.2f %7.2f' % (imie, nazwisko,rok_urodzenia, stanowisko, płaca, płaca*1.23,)) # uzupełnia miejsca zerami
+print(imie, nazwisko, rok_urodzenia, stanowisko, płaca, round(płaca, 2),
+      round(płaca * 1.23, 2))  # zaokragla matematycznie
+print('%s %s %s %s %7.2f %7.2f' % (
+    imie, nazwisko, rok_urodzenia, stanowisko, płaca, płaca * 1.23,))  # uzupełnia miejsca zerami
 
-#p6
+# p6
 from math import pi as pi_import
-r = 3
-print(pi_import* r*r)
-print(pi_import* pow(r,2))
-print(round(pi_import * (r ** 2),2))
 
+r = 3
+print(pi_import * r * r)
+print(pi_import * pow(r, 2))
+print(round(pi_import * (r ** 2), 2))
 
 '''#P7
 
@@ -80,28 +82,27 @@ print(for)
 '''
 
 print(1e+2)
-print(3//2)
+print(3 // 2)
 
-p= 10.5*2
-print(p,type(p))
+p = 10.5 * 2
+print(p, type(p))
 
-x=3/2
+x = 3 / 2
 print(type(x))
 print(round(-1.6))
-print(int(-1.2+0.5))
+print(int(-1.2 + 0.5))
 
+# P8
 
-#P8
+print(type(imie), type(nazwisko), type(rok_urodzenia), type(stanowisko), type(płaca))
 
-print(type(imie),type(nazwisko),type(rok_urodzenia), type(stanowisko),type(płaca))
-
-#p10
+# p10
 
 kwota = 1000
 
-print(round(kwota/1.03,2), round(kwota/1.07,2),round(kwota/1.23,2))
+print(round(kwota / 1.03, 2), round(kwota / 1.07, 2), round(kwota / 1.23, 2))
 
-#P11
+# P11
 
 cena_chleba = 1.99
 cena_mleka = 2.5
@@ -109,15 +110,110 @@ cena_kg_cukierkow = 12.99
 
 print('koszt zakupów :', (2 * cena_chleba) + (0.5 * cena_chleba) + (0.3 * cena_kg_cukierkow))
 
-#p12
+# p12
 
-print((2+5j)+(4+6j), type((2+5j)+(4+6j)))
-print(4-(4+6j))
+print((2 + 5j) + (4 + 6j), type((2 + 5j) + (4 + 6j)))
+print(4 - (4 + 6j))
 
-
-#p13-14
+# p13-14
 
 x = 100
 y = 100
-print('octal',oct(x))
-print('hex',hex(y))
+print('octal', oct(x))
+print('hex', hex(y))
+
+print(bool('abc'), bool(12), bool(0), bool(''), bool(None))
+
+print('"""\m')  # \ i coś  tam musi być
+
+print('Napis wiele\n' * 20)
+
+# P16
+
+print(bool(7), 4 > 3, 2 == 3, 2 != 3)
+
+# 19
+
+liczba = '5'
+
+print(type(int(liczba) * 2))
+
+'''liczba_in = int(input('Podaj liczbe całkowitą: '))
+print(liczba_in,type(liczba_in))'''
+
+# P24
+'''
+liczba_in = (input('Podaj dlugość odcinka: '))
+print('Pole kwadratu o boku:',liczba_in,'wynosi :',round(liczba_in**2, 2))
+print('Obwód trójkąta o boku: ',liczba_in,'wynosi :',round(liczba_in*3,2))
+print('Pole koła o promieniu :',liczba_in,'wynosi :',round(pi_import*liczba_in ** 2,2))'''
+
+# P26
+p = False
+q = True
+print(not (p and q) == (not p or not q))
+
+# P27
+
+a = True
+b = True
+c = False
+
+b1 = (not a and not b and not c)
+b2 = (not a and not b and c)
+b3 = (not a and b and not c)
+b4 = (a and not b and not c)
+print(b1 or b2 or b3 or b4)
+
+print('ala' > 'ALA')
+
+# 28
+
+
+x = -17
+print(x ** (1 / 2))
+
+# P29
+
+z = 17 % 7
+z *= z + 3;
+z = z**2 + 3*z
+print(z)
+
+
+#30
+
+print ((str(1.2e+3+34.5)+";")*19 +str(1.2e+3+34.5))
+
+
+#32
+
+'''napis1 = input('1: ')
+napis2 = input('2: ')
+print('rowne' and napis1==napis2)
+print('napis1 jest wiekszy' and napis1>napis2)
+
+if(napis1 == napis2):
+    print('Równe')
+elif(napis1>napis2):
+    print('1 wiekszy')
+else:
+    print('2 wiekszy')
+'''
+
+#P35
+
+'''imie =  input('Podaj swoje imie ')
+if ((imie[len(imie)-1].upper()) == 'A'):
+    print('Dzień Dobry Pani')
+else:
+    print('Dzień Dobry Panu')
+'''
+
+#P38
+
+SPK = float(input('Ile masz kasy ?:'))
+P = float(input ('Wiela masz procentów ?:'))
+N = int(input('Ile lat ? :'))
+
+print ('Będziesz miał :',round(SPK*((1+P/100)**N),2))
