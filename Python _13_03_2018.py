@@ -186,9 +186,155 @@ rzymskie = {1:'I',2:'II',3:'III',4:'IV',5:'V'}
 print('Cyfra rzymska :',rzymskie[key])
 '''
 
-#P48
+'''#P48
 kod = input('Co kupujesz ? :')
 szt = int(input('Ile szt ? :'))
 prod = {'k1':['nazwa1',10.],'k2':['nazwa2',5.2],'k3':['nazwa3',3.1]}
 print('Zamówienie: ', prod[kod][0], szt , prod[kod][1], szt*prod[kod][1]*1.23)
+'''
+A = set([1,2,3,4,5])
+B = set ([1, 2, 'Ala'])
 
+print(len(A),len(B))
+print(3 in A)
+print(A.issuperset(B),A.issubset(B))
+
+#Opracje na zbiorach
+print(A|B)
+print(A&B)
+print(B-A)
+print(A^B)
+
+
+# ZADANIE REKRUTACYJNE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#niepowtarzające się elementy w 2 listach
+
+lista = set(['chleb','bulka', 'maka', 'cukier','sol'])
+lista1 = set (['chleb', 'maka','pieprz'])
+lista3 = list(lista^lista1)
+print(lista3)
+
+#P49
+from random import randint , sample
+lista = range(1,50)
+res = sample(lista,6)
+print(sorted(res))
+
+
+#P50
+
+
+print(list(range(2,100,2)))
+print(list(range(-100,-2,2)))
+
+
+#p51
+x = list(range(1,21,2))
+y = list(range(1,11))
+wsp = (x,y)
+print(wsp)
+
+
+
+# ZADANIE DOMOWE  !!!!!!!!!!!!!!!!!!!!!!!!!!!! P52
+
+
+# INSTRUKCJE WARUNKOWE
+
+
+#P55
+
+
+
+
+L = [1,2,3,4,5,6]
+
+if (L[0]>0 and L[1]>0):
+    print('++')
+elif (L[0]<0 and L[1]>0):
+    print('-+')
+elif (L[0]>0 and L[1]<0):
+    print('-+')
+else:
+    print('--')
+
+'''
+pattern =  [1,2,3,4,5,6]
+score = []
+ocena = input('Podaj ocenę : ')
+if (ocena.isdigit()):
+    ocena = int(ocena)
+    if(ocena in pattern):
+        score.append(ocena)
+        print('OK')
+    else:
+        print('Zła wartość')
+else:
+    print('Krzaki')
+'''
+
+'''#Wyrażenie trójargumentowe
+login = input('Podaj login:')
+haslo = input('Podaj haslo:')
+
+
+
+print('Witam bossa') if(login=='admin' and haslo=='admin') else print('Nie jesteś bossem')
+
+'''
+
+
+#P53
+
+if(0):
+    print('OK')
+else:
+    print('NOT OK')
+
+
+#P54
+
+
+x = 5
+print('OK') if (x >=0 and x<=9) else print('Out of Range')
+
+
+#P56
+
+#liczba = int(input('Podaj liczbę calkowitą :'))
+#print('parzysta') if (int(input('Podaj liczbę calkowitą :'))%2==0) else print('Nieparzysta')
+
+#Pętle
+'''
+L = []
+i = 1
+while(i<=5):
+    L.append(input('Podaj element'+str(i)+'n-ty listy'))
+    i+=1
+    print(L)
+print(L)
+
+'''
+
+lista = list(range(1,49))
+i=0
+while(i<len(lista)):
+    if(lista[i] % 3 == 0):
+        print(lista[i],end=' ')
+    i+=1
+
+
+#losowanie LOTTO
+
+los = set()
+i = 0
+while(len(los)<6):
+    los.add(randint(1,49))
+print('Wynik:', sorted(los))
+
+lista = list(range(1,49))
+for i in lista:
+    print(i,end=' ')
+
+for i,v in enumerate(lista):
+    print(i,v, end='\n')
