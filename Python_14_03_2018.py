@@ -97,10 +97,46 @@ print(result)
 '''
 
 #P66
-
-tab = [1,2,3,4,5,6,7,8,9]
+'''
 n=1
 while (n<=9):
     print('| %03i | %03i | %03i |'% (n,n**2, n**3))
     n+=1
+
+
+#P67
+tc = range(20, -41 ,-5)
+for temp in tc:
+    if temp==0:
+        print('| %3i | %+6.1f |' % (temp, 32 + (9 / 5) * temp))
+    else:
+        print('| %+3i | %+6.1f |' % (temp,32+(9/5)*temp))
+
+
+'''
+
+#P68
+
+pattern =  [2,3,3.5,4,4.5,5]
+score = []
+while(True):
+    ocena = input('Podaj ocenę, Enter-wyjście : ')
+    if (ocena==''):
+        print(score)
+        suma = 0
+        for ocena in score:
+            suma += ocena
+        print('Srednia ocen:','%4.1f'% (suma/len(score)))
+
+        break
+    else:
+        try:
+            ocena = float(ocena)
+            if ocena in pattern:
+                score.append(ocena)
+            else:
+                print('Nie ma takiej oceny')
+        except:
+            print('Podałeś krzaki')
+
 
