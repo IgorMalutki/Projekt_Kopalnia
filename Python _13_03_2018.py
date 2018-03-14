@@ -236,7 +236,7 @@ print(wsp)
 
 
 
-# ZADANIE DOMOWE  !!!!!!!!!!!!!!!!!!!!!!!!!!!! P52
+
 
 
 # INSTRUKCJE WARUNKOWE
@@ -314,7 +314,7 @@ while(i<=5):
     print(L)
 print(L)
 
-'''
+
 
 lista = list(range(1,49))
 i=0
@@ -323,9 +323,9 @@ while(i<len(lista)):
         print(lista[i],end=' ')
     i+=1
 
-
+'''
 #losowanie LOTTO
-
+'''
 los = set()
 i = 0
 while(len(los)<6):
@@ -338,3 +338,25 @@ for i in lista:
 
 for i,v in enumerate(lista):
     print(i,v, end='\n')
+
+'''
+# ZADANIE DOMOWE  !!!!!!!!!!!!!!!!!!!!!!!!!!!! P52
+
+dol = ['','A','B','C','D','E','F','G','H']
+kolor = ['B','C','_']
+x = [0,1,2,3,4,5,6,7]
+y = [0,1,2,3,4,5,6,7]
+wiersz = [kolor,kolor,kolor,kolor,kolor,kolor,kolor,kolor,]
+plansza = [wiersz,wiersz,wiersz,wiersz,wiersz,wiersz,wiersz,wiersz]
+
+for i in x:
+    print(8-i,' |',end='')
+    for v in y:
+        if ((i <=2) and ((i+v)%2 == 1)):
+            plansza[i][v] = kolor[1]
+        elif((i >=5) and ((i+v)%2 == 1)):
+            plansza[i][v] = kolor[0]
+        else:
+            plansza[i][v] = kolor[2]
+    print(plansza[i])
+print(dol)
