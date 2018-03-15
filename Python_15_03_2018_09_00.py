@@ -1,5 +1,6 @@
 
 from random import sample
+from random import randint
 
 '''
 def L500 (dochody,l_dzieci,l_głów):
@@ -147,7 +148,7 @@ def wordReverse(a):
 napis = 'Lorem Ipsum momento mori'
 wordReverse(napis)
 print(napis)
-'''
+
 
 
 #P80
@@ -163,3 +164,111 @@ def sum_spec(min_wsad,licze):
     return lista,suma
 
 print(sum_spec(1,10))
+
+
+
+#  OBIEKTY    ||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+class Player:
+    imie = 'b/d'
+    nazwisko = 'b/d'
+    pozycja = 'b/d'
+    nr = 'b/d'
+
+    def info(self, i , n , p ,nr):
+        self.imie = i
+        self.nazwisko = n
+        self.pozycja = p
+        self.nr = nr
+        print('%10s %10s %10s %3i' % (i,n,p,nr))
+
+
+p1 = Player()
+print(p1.imie, p1.nazwisko,p1.pozycja,p1.nr)
+p1.imie = 'Michał'
+print(p1.imie, p1.nazwisko,p1.pozycja,p1.nr)
+p1.info('Leo','Messi','stope',15)
+
+p2 = Player()
+print(p2.imie, p2.nazwisko,p2.pozycja,p2.nr)
+
+
+class SalaryCalc:
+    def salary(self, salary_net, nazwisko):
+        self.salary_net = salary_net
+        self.nazwisko = nazwisko
+
+    def show(self):
+        return ('%7.2f %7.2f %s' % (self.salary_net, self.salary_net*1.23,self.nazwisko))
+
+test1 = SalaryCalc()
+test1.salary(1000.3,'Kowalski')
+print(test1.show())
+
+
+#P81
+
+class Zawodnik:
+    def __init__(self,nazwisko, waga, wzrost):
+        self.nazwisko = nazwisko
+        self.waga = waga
+        self.wzrost = wzrost
+        #self.bmi()
+    def bmi(self):
+        print(self.nazwisko,round(self.waga/(self.wzrost/100)**2))
+
+z1 = Zawodnik('Kowalski',64,184)
+z2 = Zawodnik('Pawlak',60,189)
+z3 = Zawodnik('Kargul',54,162)
+z4 = Zawodnik('Nowak',50,159)
+z4.bmi()
+
+#P82
+
+
+class StudentModel:
+    def __init__(self, nr, oceny):
+        self.nr = nr
+        self.oceny = oceny
+    def __str__(self):
+        return '%s %s' % (self.nr, self.oceny)
+
+
+class StudentMain:
+        ListaStudent = []
+        def __init__(self):
+            while (True):
+                dec = input('A-dodaj , S-szukaj , Q-Wyjście').upper()
+                if (dec=='Q'):
+                    print('Koniec')
+                    break
+                elif(dec=='S'):
+                    for student in self.ListaStudent:
+                        print(student)
+                elif(dec=='A'):
+                    nr = input('Podaj nr indeksu:')
+                    oceny = input('Podaj oceny po przecinku:').split(',')
+                    self.ListaStudent.append(StudentModel(nr, oceny))
+                    print('Dodano studenta')
+                else:
+                    print('Podałeś krzaki')
+
+StudentMain()
+
+
+#ZADANIE DOMOWE - wyszukiwanie po indeksie , i usuwanie konkretniej pozycji
+
+
+'''
+class Lotto:
+    def __init__(self):
+        self.Losowanie = sample(range(1, 50,1),6)
+    def sortowanie(self):
+        return sorted(self.Losowanie)
+    def __dir__(self):
+        return sorted(self.Losowanie)
+
+
+los1 = Lotto()
+print(dir(los1))
